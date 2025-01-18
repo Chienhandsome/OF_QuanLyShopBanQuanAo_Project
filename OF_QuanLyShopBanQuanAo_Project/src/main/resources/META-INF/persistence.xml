@@ -6,6 +6,19 @@
   <persistence-unit name="default">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+    <class>entity.ChiTietDonDatHang</class>
+    <class>entity.ChiTietHoaDon</class>
+    <class>entity.ChiTietKhuyenMai</class>
+    <class>entity.DonDatHang</class>
+    <class>entity.HoaDon</class>
+    <class>entity.KhachHang</class>
+    <class>entity.KhuyenMai</class>
+    <class>entity.LoaiKhuyenMai</class>
+    <class>entity.LoaiSanPham</class>
+    <class>entity.NhaCungCap</class>
+    <class>entity.NhanVien</class>
+    <class>entity.SanPham</class>
+    <class>entity.TaiKhoan</class>
 
     <properties>
       <property name="jakarta.persistence.jdbc.driver"
