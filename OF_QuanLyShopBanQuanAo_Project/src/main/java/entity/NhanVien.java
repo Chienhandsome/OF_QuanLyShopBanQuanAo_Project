@@ -1,6 +1,3 @@
-/*
-	@ (#) NhanVien.java		Apr 10, 2024
-*/
 package entity;
 
 import jakarta.persistence.AttributeConverter;
@@ -8,28 +5,27 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Converter;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedNativeQueries;
 import jakarta.persistence.NamedNativeQuery;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 /*
 @author: Đào Thanh Phú
 @date: Apr 10, 2024
 */
-import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- *
- * @author dinhh
- */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "NhanVien")
 @NamedNativeQueries({
@@ -91,8 +87,6 @@ public class NhanVien implements Serializable{
         this.hinhAnh = hinhAnh;
     }
 
-	public NhanVien() {
-	}
     public NhanVien(String maNhanVien) {
         this.maNhanVien = maNhanVien;
     }
@@ -119,80 +113,6 @@ public class NhanVien implements Serializable{
         this.gioiTinh = gioiTinh;
 
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getMaNhanVien() {
-        return maNhanVien;
-    }
-
-    public String getTenNhanVien() {
-        return tenNhanVien;
-    }
-
-    public String getNgaySinh() {
-        return ngaySinh;
-    }
-
-    public String getSDT() {
-        return SDT;
-    }
-
-    public String getDiaChi() {
-        return diaChi;
-    }
-
-    public String getChucVu() {
-        return chucVu;
-    }
-
-    public String getHinhAnh() {
-        return hinhAnh;
-    }
-
-    public void setMaNhanVien(String maNhanVien) {
-        this.maNhanVien = maNhanVien;
-    }
-
-    public void setEmail(String Email) {
-        this.email = Email;
-    }
-
-    public void setTenNhanVien(String tenNhanVien) {
-        this.tenNhanVien = tenNhanVien;
-    }
-
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
-    }
-
-    public void setNgaySinh(String ngaySinh) {
-        this.ngaySinh = ngaySinh;
-    }
-
-    public String getGioiTinh() {
-        return gioiTinh;
-    }
-
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
-    }
-
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
-    }
-
-    public void setChucVu(String chucVu) {
-        this.chucVu = chucVu;
-    }
-
-    public void setHinhAnh(String hinhAnh) {
-        this.hinhAnh = hinhAnh;
-    }
-
-    
 
     @Override
 	public String toString() {

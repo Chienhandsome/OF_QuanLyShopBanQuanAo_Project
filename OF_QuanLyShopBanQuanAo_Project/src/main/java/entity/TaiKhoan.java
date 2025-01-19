@@ -1,15 +1,7 @@
-/*
-	@ (#) TaiKhoan.java		Apr 10, 2024
- */
 package entity;
 
-/*
-@author: Đào Thanh Phú
-@date: Apr 10, 2024
- */
 import java.util.Objects;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,12 +11,15 @@ import jakarta.persistence.NamedNativeQueries;
 import jakarta.persistence.NamedNativeQuery;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
-/**
- *
- * @author dinhh
- */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "TaiKhoan")
 @NamedNativeQueries({
@@ -63,51 +58,16 @@ public class TaiKhoan implements Serializable {
 
     }
 
-    public TaiKhoan() {
+    @Override
+    public String toString() {
+        return "TaiKhoan [tenTaiKhoan=" + tenTaiKhoan + ", matKhau=" + matKhau + ", quyenTruyCap=" + quyenTruyCap
+                + ", maNhanVien=" + maNhanVien + "]";
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
         return hash;
-    }
-
-    public String getTenTaiKhoan() {
-        return tenTaiKhoan;
-    }
-
-    public void setTenTaiKhoan(String tenTaiKhoan) {
-        this.tenTaiKhoan = tenTaiKhoan;
-    }
-
-    public String getMatKhau() {
-        return matKhau;
-    }
-
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
-    }
-
-    public String getQuyenTruyCap() {
-        return quyenTruyCap;
-    }
-
-    public void setQuyenTruyCap(String quyenTruyCap) {
-        this.quyenTruyCap = quyenTruyCap;
-    }
-
-    public NhanVien getMaNhanVien() {
-        return maNhanVien;
-    }
-
-    public void setMaNhanVien(NhanVien maNhanVien) {
-        this.maNhanVien = maNhanVien;
-    }
-
-    @Override
-    public String toString() {
-        return "TaiKhoan [tenTaiKhoan=" + tenTaiKhoan + ", matKhau=" + matKhau + ", quyenTruyCap=" + quyenTruyCap
-                + ", maNhanVien=" + maNhanVien + "]";
     }
 
     @Override
