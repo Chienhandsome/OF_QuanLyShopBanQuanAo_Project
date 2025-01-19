@@ -1,18 +1,17 @@
-/*
-	@ (#) ChiTietDonHang.java		Apr 10, 2024
- */
 package entity;
 
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
-
-/*
-@author: Đào Thanh Phú
-@date: Apr 10, 2024
-ok
- */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
+@Table(name = "ChiTietDonDatHang")
 public class ChiTietDonDatHang implements Serializable{
 
 	@Id
@@ -25,7 +24,8 @@ public class ChiTietDonDatHang implements Serializable{
 	@JoinColumn(name = "maSP")
 	private SanPham maSP;
 
-	@Column(name = "soLuong", nullable = false)
+	@Setter
+    @Column(name = "soLuong", nullable = false)
 	private int soLuong;
 
 	@Column(name = "donGiaBan", nullable = false)
@@ -38,9 +38,6 @@ public class ChiTietDonDatHang implements Serializable{
 		this.donGia = donGia;
 	}
 
-	public ChiTietDonDatHang() {
-	}
-
 	public ChiTietDonDatHang(DonDatHang maDDH) {
 		this.maDDH = maDDH;
 	}
@@ -48,38 +45,6 @@ public class ChiTietDonDatHang implements Serializable{
 	public ChiTietDonDatHang(DonDatHang maDDH, int soLuong, Double donGia) {
 		this.maDDH = maDDH;
 		this.soLuong = soLuong;
-		this.donGia = donGia;
-	}
-
-	public DonDatHang getMaDDH() {
-		return maDDH;
-	}
-
-	public void setMaDDH(DonDatHang maDDH) {
-		this.maDDH = maDDH;
-	}
-
-	public SanPham getMaSP() {
-		return maSP;
-	}
-
-	public void setMaSP(SanPham maSP) {
-		this.maSP = maSP;
-	}
-
-	public int getSoLuong() {
-		return soLuong;
-	}
-
-	public void setSoLuong(int soLuong) {
-		this.soLuong = soLuong;
-	}
-
-	public double getDonGia() {
-		return donGia;
-	}
-
-	public void setDonGia(double donGia) {
 		this.donGia = donGia;
 	}
 

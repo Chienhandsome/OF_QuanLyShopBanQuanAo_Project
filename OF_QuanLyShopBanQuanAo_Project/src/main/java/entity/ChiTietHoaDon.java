@@ -1,20 +1,19 @@
 
 package entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
-/*
-@author: Lê Huy Hùng
- */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
+@Table(name = "ChiTietHoaDon")
 @NamedQueries({ @NamedQuery(name = "ChiTietHoaDon.docTuBang", query = "select cthd from ChiTietHoaDon cthd"),
 
 		@NamedQuery(name = "ChiTietHoaDon.selectChung1", query = "SELECT NEW entity.ChiTietHoaDon("
@@ -73,9 +72,6 @@ public class ChiTietHoaDon implements Serializable{
 		this.donGia = donGia;
 	}
 
-	public ChiTietHoaDon() {
-	}
-
 	public ChiTietHoaDon(HoaDon maHD) {
 		this.maHD = maHD;
 	}
@@ -86,37 +82,6 @@ public class ChiTietHoaDon implements Serializable{
 		this.donGia = donGia;
 	}
 
-	public HoaDon getMaHD() {
-		return maHD;
-	}
-
-	public void setMaHD(HoaDon maHD) {
-		this.maHD = maHD;
-	}
-
-	public SanPham getMaSP() {
-		return maSP;
-	}
-
-	public void setMaSP(SanPham maSP) {
-		this.maSP = maSP;
-	}
-
-	public int getSoLuong() {
-		return soLuong;
-	}
-
-	public void setSoLuong(int soLuong) {
-		this.soLuong = soLuong;
-	}
-
-	public double getDonGia() {
-		return donGia;
-	}
-
-	public void setDonGia(double donGia) {
-		this.donGia = donGia;
-	}
 
 	@Override
 	public String toString() {

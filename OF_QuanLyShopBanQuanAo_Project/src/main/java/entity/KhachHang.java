@@ -6,23 +6,18 @@ package entity;
 import java.util.Objects;
 import java.util.Set;
 
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Convert;
-import jakarta.persistence.Converter;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
-/*
-@author: Đào Thanh Phú
-@date: Apr 10, 2024
-*/
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
+@Table(name = "KhachHang")
 @NamedQueries({ @NamedQuery(name = "KhachHang.docTuBang", query = "select kh from KhachHang kh"),
 				@NamedQuery(name = "KhachHang.layTenKhachHang",
 							query = "SELECT CONCAT(k.maKH, ' - ', k.tenKH) AS hoTen FROM KhachHang k WHERE k.maKH = :maKH")
@@ -53,10 +48,6 @@ public class KhachHang implements Serializable{
 		this.soDienThoai = soDienThoai;
 		this.gioiTinh = gioiTinh;
 	}
-	
-	public KhachHang() {
-		super();
-	}
 
 	public KhachHang(String maKH) {
 		this.maKH = maKH;
@@ -71,46 +62,6 @@ public class KhachHang implements Serializable{
 	public KhachHang(String maKH, String tenKH) {
 		this.maKH = maKH;
 		this.tenKH = tenKH;
-	}
-
-	public String getMaKH() {
-		return maKH;
-	}
-
-	public void setMaKH(String maKH) {
-		this.maKH = maKH;
-	}
-
-	public String getTenKH() {
-		return tenKH;
-	}
-
-	public void setTenKH(String tenKH) {
-		this.tenKH = tenKH;
-	}
-
-	public String getDiaChi() {
-		return diaChi;
-	}
-
-	public void setDiaChi(String diaChi) {
-		this.diaChi = diaChi;
-	}
-
-	public String getSoDienThoai() {
-		return soDienThoai;
-	}
-
-	public void setSoDienThoai(String soDienThoai) {
-		this.soDienThoai = soDienThoai;
-	}
-
-	public boolean isGioiTinh() {
-		return gioiTinh;
-	}
-
-	public void setGioiTinh(boolean gioiTinh) {
-		this.gioiTinh = gioiTinh;
 	}
 
 	@Override

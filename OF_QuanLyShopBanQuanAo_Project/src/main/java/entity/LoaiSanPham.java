@@ -1,22 +1,19 @@
-/*
-	@ (#) LoaiSanPham.java		Apr 10, 2024
-*/
 package entity;
 
 import java.util.Set;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
-/*
-@author: Đào Thanh Phú
-@date: Apr 10, 2024
-*/
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
+@Table(name = "LoaiSanPham")
 public class LoaiSanPham implements Serializable{
 	@Id
 	private String maLoai;
@@ -31,32 +28,9 @@ public class LoaiSanPham implements Serializable{
 		this.tenLoai = tenLoai;
 	}
 
-	
-	
-	public LoaiSanPham() {
-		super();
-	}
-
-
 
 	public LoaiSanPham(String maLoai) {
 		this.maLoai = maLoai;
-	}
-
-	public String getMaLoai() {
-		return maLoai;
-	}
-
-	public void setMaLoai(String maLoai) {
-		this.maLoai = maLoai;
-	}
-
-	public String getTenLoai() {
-		return tenLoai;
-	}
-
-	public void setTenLoai(String tenLoai) {
-		this.tenLoai = tenLoai;
 	}
 
 	@Override

@@ -1,12 +1,5 @@
-/*
-	@ (#) NhaCungCap.java		Apr 10, 2024
-*/
 package entity;
 
-/*
-@author: Đào Thanh Phú
-@date: Apr 10, 2024
-*/
 import java.util.Objects;
 import java.util.Set;
 
@@ -18,12 +11,16 @@ import jakarta.persistence.NamedNativeQueries;
 import jakarta.persistence.NamedNativeQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
-/**
- *
- * @author dinhh
- */
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
 @Table(name = "NhaCungCap")
 @NamedNativeQueries({
     @NamedNativeQuery(
@@ -41,7 +38,7 @@ import java.io.Serializable;
             resultClass = NhaCungCap.class
         )
 })
-@Entity
+
 public class NhaCungCap implements Serializable{
 	@Id
 	private String maNhaCungCap;
@@ -54,42 +51,8 @@ public class NhaCungCap implements Serializable{
 	@OneToMany(mappedBy = "nhaCungCap", cascade = CascadeType.REMOVE)
 	private Set<SanPham> setSanPham;
 
-	public String getMaNhaCungCap() {
-		return maNhaCungCap;
-	}
-
-	public String getTenNhaCungCap() {
-		return tenNhaCungCap;
-	}
-
-	public String getDiaChi() {
-		return diaChi;
-	}
-
-	public String getSdt() {
-		return sdt;
-	}
-
-	public void setMaNhaCungCap(String maNhaCungCap) {
-		this.maNhaCungCap = maNhaCungCap;
-	}
-
-	public void setTenNhaCungCap(String tenNhaCungCap) {
-		this.tenNhaCungCap = tenNhaCungCap;
-	}
-
-	public void setDiaChi(String diaChi) {
-		this.diaChi = diaChi;
-	}
-
-	public void setSdt(String sdt) {
-		this.sdt = sdt;
-	}
 	public NhaCungCap(String maNhaCungCap) {
 		this.maNhaCungCap = maNhaCungCap;
-	}
-	public NhaCungCap() {
-	
 	}
 
 	public NhaCungCap(String maNhaCungCap, String tenNhaCungCap, String sdt, String diaChi) {

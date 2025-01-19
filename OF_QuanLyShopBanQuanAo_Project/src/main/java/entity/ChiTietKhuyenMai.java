@@ -4,17 +4,19 @@ package entity;
 /*
 @author: Lê Huy Hùng
  */
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
+@Table(name = "ChiTietKhuyenMai")
 @NamedQueries({
 //    @NamedQuery(name = "KhuyenMai.docTuBang", query = "SELECT DISTINCT km FROM KhuyenMai km WHERE EXISTS (SELECT 1 FROM ChiTietKhuyenMai ctkm WHERE ctkm.khuyenMai = km)")
     @NamedQuery(name = "ChiTietKhuyenMai.docTuBang", query = "SELECT DISTINCT ctkm FROM ChiTietKhuyenMai ctkm JOIN ctkm.khuyenMai km JOIN ctkm.sanPham sp JOIN sp.loaiSP lsp")
@@ -39,36 +41,8 @@ public class ChiTietKhuyenMai implements Serializable {
         this.giaGiam = giaGiam;
     }
 
-    // No-argument constructor
-    public ChiTietKhuyenMai() {
-    }
-
     public ChiTietKhuyenMai(KhuyenMai khuyenMai, double giaGiam) {
         this.khuyenMai = khuyenMai;
-        this.giaGiam = giaGiam;
-    }
-
-    public KhuyenMai getKhuyenMai() {
-        return khuyenMai;
-    }
-
-    public void setKhuyenMai(KhuyenMai khuyenMai) {
-        this.khuyenMai = khuyenMai;
-    }
-
-    public SanPham getSanPham() {
-        return sanPham;
-    }
-
-    public void setSanPham(SanPham sanPham) {
-        this.sanPham = sanPham;
-    }
-
-    public double getGiaGiam() {
-        return giaGiam;
-    }
-
-    public void setGiaGiam(double giaGiam) {
         this.giaGiam = giaGiam;
     }
 

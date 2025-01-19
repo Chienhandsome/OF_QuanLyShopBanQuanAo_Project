@@ -4,20 +4,22 @@ package entity;
 import java.time.LocalDate;
 import java.util.Set;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 /*
 @author: Lê Huy Hùng
  */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
+@Table(name = "HoaDon")
 public class HoaDon implements Serializable{
 
 	@Id
@@ -53,9 +55,6 @@ public class HoaDon implements Serializable{
 		this.maNV = maNV;
 	}
 
-	public HoaDon() {
-	}
-
 	public HoaDon(String maHD) {
 		this.maHD = maHD;
 	}
@@ -82,38 +81,6 @@ public class HoaDon implements Serializable{
 	public HoaDon(LocalDate ngayTao) {
 
 		this.ngayTao = ngayTao;
-	}
-
-	public String getMaHD() {
-		return maHD;
-	}
-
-	public void setMaHD(String maHD) {
-		this.maHD = maHD;
-	}
-
-	public LocalDate getNgayTao() {
-		return ngayTao;
-	}
-
-	public void setNgayTao(LocalDate ngayTao) {
-		this.ngayTao = ngayTao;
-	}
-
-	public KhachHang getMaKh() {
-		return maKh;
-	}
-
-	public void setMaKh(KhachHang maKh) {
-		this.maKh = maKh;
-	}
-
-	public NhanVien getMaNV() {
-		return maNV;
-	}
-
-	public void setMaNV(NhanVien maNV) {
-		this.maNV = maNV;
 	}
 
 	@Override

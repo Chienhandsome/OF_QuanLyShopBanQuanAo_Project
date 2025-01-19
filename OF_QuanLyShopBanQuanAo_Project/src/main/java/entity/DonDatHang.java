@@ -5,20 +5,22 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 /*
 @author: Lê Huy Hùng
  */
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
+@Table(name = "DonDatHang")
 public class DonDatHang implements Serializable{
 	@Id
 	@Column(name = "maDonDatHang")
@@ -44,60 +46,6 @@ public class DonDatHang implements Serializable{
 		this.maKh = maKh;
 		this.maNV = maNV;
 		this.tinhTrang = tinhTrang;
-	}
-
-	public void setTinhTrang(String tinhTrang) {
-		this.tinhTrang = tinhTrang;
-	}
-
-	public String getTinhTrang() {
-		return tinhTrang;
-	}
-
-	public DonDatHang(String maDDH) {
-		this.maDDH = maDDH;
-	}
-
-	public DonDatHang() {
-
-	}
-
-	public DonDatHang(String maDDH, LocalDate ngayTao) {
-		this.maDDH = maDDH;
-		this.ngayTao = ngayTao;
-
-	}
-
-	public String getMaDDH() {
-		return maDDH;
-	}
-
-	public LocalDate getNgayTao() {
-		return ngayTao;
-	}
-
-	public KhachHang getMaKh() {
-		return maKh;
-	}
-
-	public NhanVien getMaNV() {
-		return maNV;
-	}
-
-	public void setMaDDH(String maDDH) {
-		this.maDDH = maDDH;
-	}
-
-	public void setNgayTao(LocalDate ngayTao) {
-		this.ngayTao = ngayTao;
-	}
-
-	public void setMaKh(KhachHang maKh) {
-		this.maKh = maKh;
-	}
-
-	public void setMaNV(NhanVien maNV) {
-		this.maNV = maNV;
 	}
 
 	@Override
