@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="QuanLyShopBanQuanAoDB@localhost" uuid="f4257985-b331-4e0d-b140-745e71683ca3">
+    <data-source source="LOCAL" name="QuanLyShopBanQuanAoDB" uuid="f4257985-b331-4e0d-b140-745e71683ca3">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
